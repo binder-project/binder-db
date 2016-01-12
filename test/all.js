@@ -9,6 +9,7 @@ describe('getDatabase', function () {
     var getDatabase = require('../index.js').getDatabase
     getDatabase(function (err, conn) {
       if (err) throw err
+      assert.equal(conn.name, 'binder')
       done()
     })
   })
