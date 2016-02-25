@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/binder-project/binder-db",
   "dependencies": {
-    "mongoose": "^4.3.5"
+    "mongoose": "^4.4.2"
   },
   "devDependencies": {
     "mocha": "^2.3.4"

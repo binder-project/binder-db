@@ -13,6 +13,7 @@ var mongoose = require('mongoose')
 var getDatabase = function (opts, cb) {
   if (typeof opts === 'function') {
     cb = opts
+    opts = {}
   }
   var makeConn = function (config) {
     var url = 'mongodb://' + config.host
