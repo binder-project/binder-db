@@ -1,6 +1,6 @@
 {
   "name": "binder-db",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Binder module for consistent database management across components",
   "main": "index.js",
   "scripts": {
