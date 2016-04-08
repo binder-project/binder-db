@@ -1,5 +1,6 @@
 {
   "host": "localhost",
   "port": 9050,
-  "db": "binder"
+  "db": "binder",
+  "dir": "/data/binder/db"
 }

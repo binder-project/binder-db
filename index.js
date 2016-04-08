@@ -7,13 +7,13 @@ var mongoose = require('mongoose')
 /**
  * Creates a connection to the main Binder MongoDB database
  *
- * @param {object} opts - options object containing a config specification
+ * @param {object} opts - object containing config specification
  * @param {function} cb - callback(err, connection)
  */
-var getDatabase = function (opts, cb) {
-  if (typeof opts === 'function') {
-    cb = opts
-    opts = {}
+var getDatabase = function (config, cb) {
+  if (typeof config === 'function') {
+    cb = config
+    config = {}
   }
   var makeConn = function (config) {
     var url = 'mongodb://' + config.host
@@ -28,9 +28,8 @@ var getDatabase = function (opts, cb) {
       return cb(null, db)
     })
   }
-  var config = opts.config
-  if (!config) {
-    fs.readFile(path.join(__dirname, 'conf', 'main.json'), function (err, text) {
+  if (!config || !config.host) {
+    fs.readFile(path.join(process.env['HOME'], '.binder/db.conf'), function (err, text) {
       if (err) return cb(err)
       makeConn(JSON.parse(text))
     })

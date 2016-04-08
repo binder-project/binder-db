@@ -13,19 +13,4 @@ describe('getDatabase', function () {
       done()
     })
   })
-
-  it('should throw an error if the MongoDB connection fails', function (done) {
-    var getDatabase = require('../index.js').getDatabase
-    var config = {
-      host: 'blah',
-      port: 27017,
-      db: 'binder'
-    }
-    var opts = {}
-    opts.config = config
-    getDatabase(opts, function (err, conn) {
-      assert.notEqual(err, undefined)
-      done()
-    })
-  })
 })

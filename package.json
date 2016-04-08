@@ -4,7 +4,8 @@
   "description": "Binder module for consistent database management across components",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/"
+    "test": "mocha test/",
+    "postinstall": "node scripts/postinstall.js"
   },
   "repository": {
     "type": "git",
